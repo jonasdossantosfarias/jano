@@ -146,7 +146,7 @@
                 await auth.signInWithEmailAndPassword(email, password);
                 messageElement.textContent = 'Login bem-sucedido!';
                 messageElement.style.color = 'green';
-                window.location.href = 'calhumor.html';
+                window.location.href = 'menuprincipal.html';
             } catch (error) {
                 if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
                     messageElement.textContent = 'E-mail ou senha não cadastrados.';
