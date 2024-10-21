@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medição de Batimentos Cardíacos e Registro de Estresse</title>
+    <link rel="stylesheet" href="css/calstress.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container-horizontal">
+        <div id="stress-chart-container" class="card">
+            <h2>Progresso de Estresse</h2>
+            <canvas id="stressChart"></canvas>
+        </div>
+    
+        <div class="calendar-container">
+            <div class="month">
+                <button class="nav-button" id="prev">&lt;</button>
+                <div id="month-year"></div>
+                <button class="nav-button" id="next">&gt;</button>
+            </div>
+            <div class="days" id="calendar-days"></div>
+        </div>
+    </div>      
+    
+    <!-- Caixa de diálogo para medição de batimentos cardíacos -->
+    <div id="measurementDialog" class="measurement-dialog hidden modern-dialog">
+        <div class="dialog-content">
+            <h2 class="dialog-title">Registrar Frequência Cardíaca</h2>
+            <div class="horizontal-container">
+                <div id="bpmContainer">
+                    <div class="bpm-display modern-bpm-display">
+                        <span class="heart-icon">💓</span>
+                        <span id="heartRate">--</span> BPM
+                    </div>
+                </div>
+                <div id="progressContainer" class="modern-progress">
+                    <div class="circle modern-circle">
+                        <video id="video" autoplay muted></video>
+                    </div>
+                </div>
+            </div>
+            <div id="instructionsText" class="modern-instructions">Coloque o dedo na câmera para iniciar a medição.</div>
+            <button id="startBtn" class="modern-button">Iniciar Medição</button>
+            <div class="instructions modern-instructions-text">
+                <p>Se sentir calor, remova o dedo imediatamente.</p>
+            </div>
+            <div class="dialog-buttons">
+                <button id="saveBtn" class="modern-button save-button">Salvar</button>
+                <button id="cancelBtn" class="modern-button cancel-button">Cancelar</button>
+            </div>
+        </div>
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/calstress.js"></script>
+</body>
+</html>
